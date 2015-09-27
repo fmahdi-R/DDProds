@@ -25,7 +25,7 @@ shinyUI(fluidPage(
                    sliderInput("rep", 
                                label = "Number of Repetition:",
                                min = absmin_counts, max = absmax_counts, value = counts, step = 100),
-                   a("Click me to go to Help Page", href = "http://rpubs.com/fmahdi/111518")
+                   a("Click me to go to Help Page", href = "http://rpubs.com/fmahdi/111518",target="_blank")
             ),
             column(4, offset =1,
 
