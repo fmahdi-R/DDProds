@@ -18,6 +18,7 @@ counts <- 1000
 
 shinyUI(fluidPage(
     titlePanel("Central Limit Theorem"),
+    a("Click me to go to Tutorial Page", href = "http://rpubs.com/fmahdi/111518",target="_blank"),
     plotOutput(outputId = "main_plot"),
     hr(),
         fluidRow(
@@ -25,13 +26,15 @@ shinyUI(fluidPage(
                    sliderInput("rep", 
                                label = "Number of Repetition:",
                                min = absmin_counts, max = absmax_counts, value = counts, step = 100),
-                   a("Click me to go to Help Page", href = "http://rpubs.com/fmahdi/111518",target="_blank")
+                   helpText('Sets the number of repetitions for each our die rolls')
+                   
             ),
             column(4, offset =1,
 
                 sliderInput("range", 
                             label = "Dice to Roll:",
-                            min = absmin_rolls, max = absmax_rolls, value = c(min_rolls, no_rolls))
+                            min = absmin_rolls, max = absmax_rolls, value = c(min_rolls, no_rolls)),
+                helpText('Sets the number of dice to roll, use both sliders to select a range')
             ),
             column(2,
                 actionButton("submit","Run Experiment")
